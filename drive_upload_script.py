@@ -32,6 +32,6 @@ def upload_to_drive(file_path):
     print(f'File ID: {file.get("id")}')
 
 if __name__ == '__main__':
-    file_path = "C:/Users/USER OS/OneDrive/Desktop/drive_upload_project/ChatGPT_Conversation_v2.pdf"
+    file_path = "Enter_your_file_location"
 
     upload_to_drive(file_path)
