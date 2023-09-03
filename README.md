@@ -29,4 +29,5 @@ Open a terminal or command prompt.
 Navigate to the directory containing the script.
 
 #Install the required libraries using pip:
+
 pip install google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client
