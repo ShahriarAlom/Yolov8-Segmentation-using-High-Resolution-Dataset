@@ -1,33 +1,36 @@
-# Automatic_Google_Drive_File_Uploader
-This script allows you to upload a file to Google Drive using Python automatically.
+Yolov8 Segmentation using High-Resolution Dataset (Prototype)
 
-##Prerequisites:
-Python: Ensure you have Python installed. If not, download and install it from python.org.
+Overview
+This repository contains a prototype for apple segmentation using the Apple Polygon dataset. The goal is to segment apples in images based on their shapes and boundaries. The project leverages YOLOv8 architecture and is trained on a custom dataset containing annotated Apple images.
 
-##Google Cloud Platform (GCP) Account: You need a GCP account to create OAuth 2.0 client IDs. If you don't have one, sign up here.
+Key Details
+Dataset: Apple Polygon dataset
+Classes: 3 (e.g., good_apple, damage_apple, fallen_apple)
+Resolution: Custom (1500 pixels)
+GPU: Tesla T4
+Training Duration: 1 epoch (for the initial prototype)
+Project Structure
+data/: Contains the dataset (images and annotations)
+models/: Stores trained YOLOv8 models
+train.py: Training script
+inference.py: Inference script for segmentation
+requirements.txt: Required Python packages
+Getting Started
+Clone this repository:
+git clone https://github.com/your-username/apple-segmentation.git
+cd apple-segmentation
 
-#Setup
-Create a Google Cloud Project:
+Install dependencies:
+pip install ultralytics
 
-Go to the Google Cloud Console.
-Click on the project dropdown and select New Project.
-Give it a name and create it.
-Enable the Google Drive API:
+Prepare your dataset:
+Update the data configuration (e.g., data.yaml) with class names and paths.
+Train the model:
+!yolo segment train data=/content/data.yaml model=yolov8x-seg.pt epochs=1 workers=1 batch=1 imgsz=2016 plots=False device=[0]
 
-In the GCP dashboard, navigate to APIs & Services > Library.
-Search for "Google Drive API" and enable it for your project.
-Create OAuth 2.0 client IDs:
+Results
+The prototype achieves promising results in apple segmentation. Further fine-tuning and evaluation are recommended for production use.
 
-Navigate to APIs & Services > Credentials.
-Click on Create Credentials and select OAuth 2.0 Client IDs.
-Choose Desktop App as the application type.
-Click Create and download the client secret JSON file.
-Rename the downloaded file to client_secret.json and place it in the same directory as the script.
-Install Required Python Libraries:
-
-Open a terminal or command prompt.
-Navigate to the directory containing the script.
-
-#Install the required libraries using pip:
-
-pip install google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client
+Acknowledgments
+Apple Polygon Dataset
+Yolov8 Segmentation using High-Resolution Dataset GitHub Repository
