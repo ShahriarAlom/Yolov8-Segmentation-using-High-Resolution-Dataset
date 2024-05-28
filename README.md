@@ -10,18 +10,13 @@ Resolution: Custom (1500 pixels)
 GPU: Tesla T4
 Training Duration: 1 epoch (for the initial prototype)
 Project Structure
-data/: Contains the dataset (images and annotations)
-models/: Stores trained YOLOv8 models
-train.py: Training script
-inference.py: Inference script for segmentation
-requirements.txt: Required Python packages
-Getting Started
-Clone this repository:
-git clone https://github.com/your-username/apple-segmentation.git
-cd apple-segmentation
+content/: Contains the dataset (images and annotations)
+/content/runs/segment/train/weights/: Stores trained YOLOv8 models
+architecture used: yolov8x-seg.pt
 
+Getting Started
 Install dependencies:
-pip install ultralytics
+!pip install ultralytics
 
 Prepare your dataset:
 Update the data configuration (e.g., data.yaml) with class names and paths.
